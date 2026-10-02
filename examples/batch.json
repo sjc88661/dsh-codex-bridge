@@ -1,0 +1,12 @@
+{
+  "tasks": [
+    {
+      "label": "marker-one",
+      "prompt": "Return exactly the text EXAMPLE_MARKER_ONE and make no tool calls."
+    },
+    {
+      "label": "marker-two",
+      "prompt": "Return exactly the text EXAMPLE_MARKER_TWO and make no tool calls."
+    }
+  ]
+}

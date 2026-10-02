@@ -1,0 +1,73 @@
+{
+  "name": "@dsh-external/dsh-codex-bridge",
+  "version": "0.2.0",
+  "description": "Codex ↔ DeepSeek Harness task dispatch bridge: local HTTP API, task journal, and CLI adapter",
+  "private": true,
+  "type": "module",
+  "main": "./lib/index.js",
+  "types": "./lib/types/index.d.ts",
+  "bin": {
+    "dsh-dispatch": "./codex-dsh-client.mjs"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/index.js.map",
+    "lib/types/index.d.ts",
+    "codex-dsh-client.mjs",
+    "client",
+    "templates",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "docs/CONFIGURATION.md",
+    "docs/RELEASING.md",
+    "docs/TROUBLESHOOTING.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "scripts/verify-bridge.mjs",
+    "examples",
+    "codex/WORKFLOW.md",
+    "codex/TASK_TEMPLATE.md",
+    "codex/ACCEPTANCE_TEMPLATE.md"
+  ],
+  "license": "BSD-3-Clause",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "keywords": [
+    "codex",
+    "deepseek-harness",
+    "task-dispatch",
+    "agent",
+    "bridge"
+  ],
+  "dependencies": {
+    "cordis": "npm:@deepseek-ai/cordis@^4.0.1",
+    "schemastery": "npm:@deepseek-ai/schemastery@^3.18.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "fflate": "^0.8.2",
+    "typescript": "^5.9.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run typecheck && npm run build && npm test",
+    "release": "node scripts/package-release.mjs"
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

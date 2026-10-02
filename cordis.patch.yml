@@ -1,0 +1,5 @@
+# dsh-codex-bridge bundle 层：插入 Codex ↔ DSH 任务分配桥。
+- insert:
+    - id: dsh-codex-bridge
+      name: '@dsh-external/dsh-codex-bridge'
+      config: {}

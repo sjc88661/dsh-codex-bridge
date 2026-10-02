@@ -1,0 +1,5 @@
+{
+  "url": "http://127.0.0.1:3080/dsh-codex-bridge",
+  "workspace": ".",
+  "mode": "async"
+}

@@ -1,0 +1,33 @@
+{
+  "files": [
+    "src",
+    "tests",
+    "client",
+    "templates",
+    "examples",
+    "README.md",
+    "README.en.md",
+    "docs/CONFIGURATION.md",
+    "docs/RELEASING.md",
+    "docs/TROUBLESHOOTING.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "package.json",
+    "package-lock.json",
+    "tsconfig.json",
+    "codex-dsh-client.mjs",
+    "cordis.patch.yml",
+    "scripts/build.sh",
+    "scripts/build.mjs",
+    "scripts/package-release.mjs",
+    "scripts/verify-bridge.mjs",
+    "release-files.json",
+    ".github/workflows/ci.yml",
+    ".gitignore",
+    ".gitattributes",
+    "codex/WORKFLOW.md",
+    "codex/TASK_TEMPLATE.md",
+    "codex/ACCEPTANCE_TEMPLATE.md"
+  ]
+}

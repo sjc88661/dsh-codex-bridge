@@ -1,0 +1,9 @@
+- id: dsh-codex-bridge
+  config:
+    provider: spawn
+    agentPreset: standard
+    maxConcurrent: 1
+    workspace: .
+    workspaceRoots:
+      - .
+    apiToken: !!js process.env.DSH_BRIDGE_TOKEN ?? ''
