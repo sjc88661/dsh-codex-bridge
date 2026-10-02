@@ -111,6 +111,7 @@ test('CLI config can occur on either side of command; CLI workspace and fields o
     const configPath = join(root, 'dsh-bridge.json')
     await writeFile(configPath, JSON.stringify({ url: 'http://127.0.0.1:1/ignored', workspace: 'cfg-ws', provider: 'cfg-p', model: 'cfg-m', agentProvider: 'cfg-ap', mode: 'sync', maxDepth: 2 }))
     await withEnv({ DSH_BRIDGE_URL: server.url }, async () => {
+      const cliWorkspace = resolve(process.cwd(), 'cli-ws')
       let got
       const out = console.log; const err = console.error; console.log = (...v) => { out(...[]) }; console.error = (...v) => { err(...[]) }
       try {
@@ -118,7 +119,7 @@ test('CLI config can occur on either side of command; CLI workspace and fields o
         got = code
       } finally { console.log = out; console.error = err }
       assert.equal(got, 0)
-      assert.deepEqual(server.calls[0].body, { prompt: 'hello', workspace: resolve(sub, 'cli-ws'), provider: 'cfg-p', mode: 'async', maxDepth: 2, agentOptions: { provider: 'cfg-ap', model: 'cli-model' } })
+      assert.deepEqual(server.calls[0].body, { prompt: 'hello', workspace: cliWorkspace, provider: 'cfg-p', mode: 'async', maxDepth: 2, agentOptions: { provider: 'cfg-ap', model: 'cli-model' } })
     }, sub)
   } finally { await server.close(); await rm(root, { recursive: true, force: true }) }
 })
